@@ -1,0 +1,13 @@
+[package]
+name = "safe_auth"
+authors = ["Benjamin Kampmann <ben@gnunicorn.org>", "MaidSafe Developers <dev@maidsafe.net>"]
+version = "0.1.0-dev"
+description = "SAFE authentication protocol as per RFC #48"
+homepage = "http://maidsafe.net"
+license = "GPL-3.0"
+
+
+[dependencies]
+clippy = { version = "~0.0.97", optional = true }
+safe_core = { git = "https://github.com/maidsafe/safe_core.git", branch = "dev" }
+maidsafe_utilities = "0.10.0"
