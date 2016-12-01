@@ -11,3 +11,5 @@ license = "GPL-3.0"
 clippy = { version = "~0.0.97", optional = true }
 safe_core = { git = "https://github.com/maidsafe/safe_core.git", branch = "dev" }
 maidsafe_utilities = "0.10.0"
+rustc-serialize = "~0.3.19"
+quick-error = "~1.1.0"

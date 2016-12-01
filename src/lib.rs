@@ -28,11 +28,11 @@
        html_favicon_url = "http://maidsafe.net/img/favicon.ico")]
 
 #![forbid(exceeding_bitshifts, mutable_transmutes, no_mangle_const_items,
-          unknown_crate_types, warnings)]
+          unknown_crate_types)]
 #![deny(bad_style, deprecated, improper_ctypes, missing_docs,
         non_shorthand_field_patterns, overflowing_literals, plugin_as_library,
         private_no_mangle_fns, private_no_mangle_statics, stable_features,
-        unconditional_recursion, unknown_lints, unsafe_code, unused,
+        unconditional_recursion, unknown_lints, unsafe_code,
         unused_allocation, unused_attributes, unused_comparisons, unused_features,
         unused_parens, while_true)]
 #![warn(trivial_casts, trivial_numeric_casts, unused_extern_crates, unused_import_braces,
@@ -46,9 +46,17 @@
                                    option_unwrap_used))]
 #![cfg_attr(feature="clippy", allow(use_debug, too_many_arguments))]
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-    }
-}
+extern crate rustc_serialize;
+#[macro_use]
+extern crate maidsafe_utilities;
+// extern crate safe_core;
+
+#[allow(unused_extern_crates)]
+// Needed because the crate is only used for macros
+#[macro_use]
+extern crate quick_error;
+
+mod errors;
+mod util;
+
+pub use util::{parse_from_uri, make_to_uri};
